@@ -1,15 +1,11 @@
 function fpb(angka1, angka2) {
     var num = 0
-    for (var i = 2; i < angka1; i++) {
+    for (var i = 1; i < angka1; i++) {
         if (angka1 % i === 0 && angka2 % i === 0) {
             num = i
         }
     }
-    if (num === 0) {
-        return num = 1
-    } else {
-        return num
-    }
+    return num
 }
 
 // TEST CASES
