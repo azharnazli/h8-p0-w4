@@ -1,22 +1,22 @@
 function digitPerkalianMinimum(angka) {
-    // you can only write your code here!
-    var result = ""
-    var array = []
-    for (var i = 0; i <= angka; i++) {
-        for (var j = 0; j <= angka; j++) {
-            if (i * j === angka) {
-                result = i + "" + j
-                array.push(result)
-            }
-        }
+  // you can only write your code here!
+  var result = "";
+  var array = [];
+  for (var i = 0; i <= angka; i++) {
+    for (var j = 0; j <= angka; j++) {
+      if (i * j === angka) {
+        result = i + "" + j;
+        array.push(result);
+      }
     }
-    var maxNumber = angka * 5
-    for (var k = 0; k < array.length; k++) {
-        if (array[k].length < maxNumber) {
-            maxNumber = array[k].length
-        }
+  }
+  var maxNumber = angka * 5;
+  for (var k = 0; k < array.length; k++) {
+    if (array[k].length < maxNumber) {
+      maxNumber = array[k].length;
     }
-    return maxNumber
+  }
+  return maxNumber;
 }
 
 // TEST CASES

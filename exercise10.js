@@ -1,29 +1,31 @@
 function changeMe(arr) {
-    // you can only write your code here!
-    var result;
-    var umur;
-    var tahun = 2019
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i][3] === undefined) {
-            umur = 'Invalid Birth Year'
-        } else {
-            umur = tahun - arr[i][3]
-        }
-        result = {
-            firstname: arr[i][0],
-            lastName: arr[i][1],
-            gender: arr[i][2],
-            age: umur
-        }
-        console.log(result)
+  //   you can only write your code here!
+  var result;
+  var umur;
+  var tahun = 2019;
+  var count = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i][3] === undefined) {
+      umur = "Invalid Birth Year";
+    } else {
+      umur = tahun - arr[i][3];
     }
+    result = {
+      firstname: arr[i][0],
+      lastName: arr[i][1],
+      gender: arr[i][2],
+      age: umur
+    };
+    count++;
+    console.log(`${count}. ${result.firstname} ${result.lastName}`);
+    console.log(result);
+  }
 }
 
 // TEST CASES
-console.log(changeMe([
-    ['Christ', 'Evans', 'Male', 1982],
-    ['Robert', 'Downey', 'Male']
-])); // 1. Christ Evans:
+console.log(
+  changeMe([["Christ", "Evans", "Male", 1982], ["Robert", "Downey", "Male"]])
+); // 1. Christ Evans:
 // { firstName: 'Christ',
 //   lastName: 'Evans',
 //   gender: 'Male',
