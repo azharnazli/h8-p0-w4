@@ -3,16 +3,20 @@ function graduates(students) {
   obj = {};
   for (var i = 0; i < students.length; i++) {
     if (obj[students[i].class]) {
-      obj[students[i].class].push({
-        name: students[i].name,
-        score: students[i].score
-      });
+      if (students[i].score > 75) {
+        obj[students[i].class].push({
+          name: students[i].name,
+          score: students[i].score
+        });
+      }
     } else {
       obj[students[i].class] = [];
-      obj[students[i].class].push({
-        name: students[i].name,
-        score: students[i].score
-      });
+      if (students[i].score > 75) {
+        obj[students[i].class].push({
+          name: students[i].name,
+          score: students[i].score
+        });
+      }
     }
   }
   return obj;
@@ -53,35 +57,35 @@ console.log(
 //   ]
 // }
 
-// console.log(
-//   graduates([
-//     {
-//       name: "Alexander",
-//       score: 100,
-//       class: "foxes"
-//     },
-//     {
-//       name: "Alisa",
-//       score: 76,
-//       class: "wolves"
-//     },
-//     {
-//       name: "Vladimir",
-//       score: 92,
-//       class: "foxes"
-//     },
-//     {
-//       name: "Albert",
-//       score: 71,
-//       class: "wolves"
-//     },
-//     {
-//       name: "Viktor",
-//       score: 80,
-//       class: "tigers"
-//     }
-//   ])
-// );
+console.log(
+  graduates([
+    {
+      name: "Alexander",
+      score: 100,
+      class: "foxes"
+    },
+    {
+      name: "Alisa",
+      score: 76,
+      class: "wolves"
+    },
+    {
+      name: "Vladimir",
+      score: 92,
+      class: "foxes"
+    },
+    {
+      name: "Albert",
+      score: 71,
+      class: "wolves"
+    },
+    {
+      name: "Viktor",
+      score: 80,
+      class: "tigers"
+    }
+  ])
+);
 
 // // {
 // //   foxes: [
@@ -96,4 +100,4 @@ console.log(
 // //   ]
 // // }
 
-// console.log(graduates([])); //{}
+console.log(graduates([])); //{}
