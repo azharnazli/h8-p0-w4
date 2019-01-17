@@ -14,7 +14,7 @@ function naikAngkot(arrPenumpang) {
         akhir = j;
       }
     }
-    total = (akhir - awal) * 2000;
+    total = Math.abs(akhir - awal) * 2000;
     penumpang.push({
       penumpang: arrPenumpang[i][0],
       naikDari: arrPenumpang[i][1],
